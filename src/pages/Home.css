@@ -1,0 +1,139 @@
+/* ── Shared section styles ──────────────────────── */
+.section {
+  padding: var(--sp-24) 0;
+}
+.section__header {
+  text-align: center;
+  margin-bottom: var(--sp-12);
+}
+.section__eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--moss);
+  margin-bottom: var(--sp-3);
+}
+.section__title {
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
+  font-weight: 700;
+  color: var(--forest);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: var(--sp-4);
+}
+.section__sub {
+  font-size: var(--text-base);
+  color: #5a6b5e;
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ── Card Grid ──────────────────────────────────── */
+.section--stays { background: var(--cream); }
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--sp-6);
+}
+
+/* ── How It Works ───────────────────────────────── */
+.section--how { background: #fff; }
+.how-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--sp-6);
+}
+.how-card {
+  background: var(--cream);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-8);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition);
+}
+.how-card:hover { transform: translateY(-3px); }
+.how-card__number {
+  font-family: var(--font-display);
+  font-size: 5rem;
+  font-weight: 700;
+  color: rgba(74, 124, 89, 0.08);
+  position: absolute;
+  top: -8px;
+  right: var(--sp-4);
+  line-height: 1;
+  user-select: none;
+}
+.how-card__icon {
+  font-size: 2.2rem;
+  margin-bottom: var(--sp-3);
+}
+.how-card h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--forest);
+  margin-bottom: var(--sp-2);
+}
+.how-card p {
+  font-size: var(--text-sm);
+  color: #5a6b5e;
+  line-height: 1.65;
+}
+
+/* ── CTA Banner ─────────────────────────────────── */
+.section--cta {
+  background: linear-gradient(135deg, var(--forest) 0%, var(--fern) 100%);
+  padding: var(--sp-16) 0;
+}
+.cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-8);
+  flex-wrap: wrap;
+}
+.cta-text h2 {
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-xl), 3vw, var(--text-3xl));
+  color: var(--wheat);
+  font-weight: 700;
+  margin-bottom: var(--sp-3);
+}
+.cta-text p {
+  font-size: var(--text-sm);
+  color: rgba(232, 217, 181, 0.75);
+  max-width: 480px;
+  line-height: 1.7;
+}
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: var(--text-base);
+  color: var(--forest);
+  background: var(--wheat);
+  padding: var(--sp-4) var(--sp-8);
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+  transition: background var(--transition), transform var(--transition);
+  flex-shrink: 0;
+}
+.cta-btn:hover {
+  background: var(--cream);
+  transform: translateY(-2px);
+}
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 768px) {
+  .section { padding: var(--sp-16) 0; }
+  .card-grid { grid-template-columns: 1fr; }
+  .how-grid  { grid-template-columns: 1fr 1fr; }
+  .cta-inner { flex-direction: column; text-align: center; }
+  .cta-text p { margin: 0 auto; }
+}
+@media (max-width: 480px) {
+  .how-grid { grid-template-columns: 1fr; }
+}

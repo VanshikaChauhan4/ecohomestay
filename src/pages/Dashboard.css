@@ -1,0 +1,72 @@
+/* ── Stats Bar ───────────────────────────────────── */
+.dash-stats-bar {
+  background: var(--forest);
+  padding: var(--sp-6) 0;
+}
+.dash-stats-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-6);
+  justify-content: space-around;
+}
+.dash-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--sp-1);
+  min-width: 100px;
+}
+.dash-stat__icon { font-size: 1.5rem; }
+.dash-stat strong {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--wheat);
+  line-height: 1;
+}
+.dash-stat span {
+  font-size: var(--text-xs);
+  color: var(--sage);
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ── Filter chips ────────────────────────────────── */
+.dash-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-8);
+}
+.dash-filter-chip {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  font-family: var(--font-body);
+  padding: var(--sp-2) var(--sp-4);
+  border-radius: var(--radius-pill);
+  background: #fff;
+  color: var(--fern);
+  border: 1.5px solid rgba(74, 124, 89, 0.25);
+  transition: all var(--transition);
+}
+.dash-filter-chip:hover,
+.dash-filter-chip.active {
+  background: var(--forest);
+  color: var(--wheat);
+  border-color: var(--forest);
+}
+
+/* ── Stays Grid ──────────────────────────────────── */
+.dash-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--sp-6);
+}
+
+@media (max-width: 640px) {
+  .dash-grid { grid-template-columns: 1fr; }
+  .dash-filters { gap: var(--sp-1); }
+  .dash-filter-chip { font-size: var(--text-xs); padding: var(--sp-1) var(--sp-3); }
+}

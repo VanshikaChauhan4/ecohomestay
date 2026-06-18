@@ -1,0 +1,169 @@
+/* ── Inner page hero variants ────────────────────── */
+.inner-hero {
+  padding: var(--sp-16) 0 var(--sp-12);
+}
+.inner-hero--fern { background: linear-gradient(135deg, var(--forest) 0%, var(--fern) 100%); }
+.inner-hero--soil { background: linear-gradient(135deg, var(--soil) 0%, #5a3d22 100%); }
+.inner-hero--amber{ background: linear-gradient(135deg, var(--amber) 0%, var(--soil) 100%); }
+
+.inner-hero__eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: var(--sp-3);
+}
+.inner-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
+  font-weight: 700;
+  color: var(--wheat);
+  max-width: 680px;
+  line-height: 1.2;
+  margin-bottom: var(--sp-4);
+  letter-spacing: -0.02em;
+}
+.inner-hero__sub {
+  font-size: var(--text-base);
+  color: rgba(232, 217, 181, 0.75);
+  max-width: 520px;
+  line-height: 1.7;
+}
+
+/* ── Inner sections ──────────────────────────────── */
+.inner-section {
+  padding: var(--sp-16) 0;
+}
+.inner-section--alt { background: var(--cream); }
+
+.inner-centered-h2 {
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-xl), 3vw, var(--text-3xl));
+  font-weight: 700;
+  color: var(--forest);
+  text-align: center;
+  margin-bottom: var(--sp-10);
+  letter-spacing: -0.02em;
+}
+
+/* ── Two-column layout ───────────────────────────── */
+.inner-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-16);
+  align-items: start;
+}
+.inner-prose h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--forest);
+  margin-bottom: var(--sp-4);
+}
+.inner-prose p {
+  font-size: var(--text-base);
+  color: #4a5e50;
+  line-height: 1.75;
+  margin-bottom: var(--sp-4);
+}
+.inner-prose em { color: var(--fern); font-style: italic; }
+
+/* Stat blocks */
+.inner-stat-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+.stat-block {
+  background: var(--cream);
+  border-radius: var(--radius-md);
+  padding: var(--sp-6);
+  border-left: 3px solid var(--moss);
+}
+.stat-block strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--forest);
+  line-height: 1;
+  margin-bottom: var(--sp-1);
+}
+.stat-block span {
+  font-size: var(--text-xs);
+  color: var(--moss);
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Values grid */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--sp-6);
+}
+.value-card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: var(--sp-8);
+  text-align: center;
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition);
+}
+.value-card:hover { transform: translateY(-3px); }
+.value-card__icon { font-size: 2.4rem; display: block; margin-bottom: var(--sp-4); }
+.value-card h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--forest);
+  margin-bottom: var(--sp-2);
+}
+.value-card p { font-size: var(--text-sm); color: #5a6b5e; line-height: 1.65; }
+
+/* Team grid */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--sp-6);
+}
+.team-card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: var(--sp-8);
+  text-align: center;
+  box-shadow: var(--shadow-card);
+}
+.team-card__avatar {
+  font-size: 3rem;
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: var(--cream);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto var(--sp-4);
+}
+.team-card h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--forest);
+  margin-bottom: var(--sp-1);
+}
+.team-card__role {
+  font-size: var(--text-xs);
+  font-family: var(--font-mono);
+  color: var(--moss);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: var(--sp-3);
+}
+.team-card__bio { font-size: var(--text-sm); color: #5a6b5e; line-height: 1.6; }
+
+/* ── Responsive ──────────────────────────────────── */
+@media (max-width: 768px) {
+  .inner-two-col { grid-template-columns: 1fr; gap: var(--sp-8); }
+  .inner-stat-stack { flex-direction: row; flex-wrap: wrap; }
+  .stat-block { flex: 1; min-width: 140px; }
+}
