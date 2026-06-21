@@ -1,0 +1,89 @@
+.ui-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid transparent;
+  transition: background var(--transition), border-color var(--transition),
+              transform var(--transition), box-shadow var(--transition), opacity var(--transition);
+  white-space: nowrap;
+}
+
+/* ── Sizes ───────────────────────────────────────── */
+.ui-btn--sm { font-size: var(--text-xs); padding: var(--sp-1) var(--sp-3); }
+.ui-btn--md { font-size: var(--text-sm); padding: 0.65rem var(--sp-6); }
+.ui-btn--lg { font-size: var(--text-base); padding: var(--sp-3) var(--sp-8); }
+
+/* ── Variants ────────────────────────────────────── */
+.ui-btn--primary {
+  background: var(--forest);
+  color: var(--cream);
+}
+.ui-btn--primary:hover:not(:disabled) {
+  background: var(--fern);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(30, 58, 47, 0.25);
+}
+
+.ui-btn--secondary {
+  background: var(--amber);
+  color: var(--dusk);
+}
+.ui-btn--secondary:hover:not(:disabled) {
+  background: #d4922f;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(196, 133, 42, 0.35);
+}
+
+.ui-btn--ghost {
+  background: transparent;
+  color: var(--forest);
+  border-color: rgba(74, 124, 89, 0.35);
+}
+.ui-btn--ghost:hover:not(:disabled) {
+  background: rgba(74, 124, 89, 0.08);
+  border-color: var(--moss);
+}
+
+.ui-btn--danger {
+  background: #B3463C;
+  color: #fff;
+}
+.ui-btn--danger:hover:not(:disabled) {
+  background: #9c3b32;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(179, 70, 60, 0.35);
+}
+
+/* ── States ──────────────────────────────────────── */
+.ui-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+.ui-btn--full { width: 100%; }
+
+.ui-btn--loading .ui-btn__label { opacity: 0.75; }
+
+.ui-btn__spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: ui-btn-spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+.ui-btn--ghost .ui-btn__spinner {
+  border-color: rgba(74, 124, 89, 0.25);
+  border-top-color: var(--forest);
+}
+
+@keyframes ui-btn-spin {
+  to { transform: rotate(360deg); }
+}
