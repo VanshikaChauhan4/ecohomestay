@@ -18,21 +18,21 @@
   font-family: var(--font-display);
   font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
   font-weight: 700;
-  color: var(--forest);
+  color: var(--text);
   letter-spacing: -0.02em;
   line-height: 1.15;
   margin-bottom: var(--sp-4);
 }
 .section__sub {
   font-size: var(--text-base);
-  color: #5a6b5e;
+  color: var(--text-muted);
   max-width: 520px;
   margin: 0 auto;
   line-height: 1.7;
 }
 
 /* ── Card Grid ──────────────────────────────────── */
-.section--stays { background: var(--cream); }
+.section--stays { background: var(--surface-alt); }
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -40,7 +40,7 @@
 }
 
 /* ── How It Works ───────────────────────────────── */
-.section--how { background: #fff; }
+.section--how { background: var(--surface-alt); }
 .how-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -74,12 +74,12 @@
   font-family: var(--font-display);
   font-size: var(--text-xl);
   font-weight: 700;
-  color: var(--forest);
+  color: var(--text);
   margin-bottom: var(--sp-2);
 }
 .how-card p {
   font-size: var(--text-sm);
-  color: #5a6b5e;
+  color: var(--text-muted);
   line-height: 1.65;
 }
 
@@ -113,7 +113,7 @@
   align-items: center;
   font-weight: 600;
   font-size: var(--text-base);
-  color: var(--forest);
+  color: var(--text);
   background: var(--wheat);
   padding: var(--sp-4) var(--sp-8);
   border-radius: var(--radius-pill);

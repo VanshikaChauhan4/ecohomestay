@@ -3,7 +3,9 @@ import Footer from '../components/Footer';
 import './InnerPage.css';
 
 const TEAM = [
-  { name: 'Vanshika chauhan',     role: 'Co-founder & CEO',  emoji: '🌿', bio: 'Former conservationist, born in Wayanad.' },
+  { name: 'Priya Nair',     role: 'Co-founder & CEO',  emoji: '🌿', bio: 'Former conservationist, born in Wayanad.' },
+  { name: 'Arjun Mehta',    role: 'Head of Host Ops',   emoji: '🌾', bio: 'Grew up on a Punjabi wheat farm; built supply chains for regenerative agriculture.' },
+  { name: 'Divya Baskaran', role: 'Community Lead',     emoji: '🤝', bio: 'Works directly with tribal village councils across Jharkhand and Chhattisgarh.' },
 ];
 
 const VALUES = [

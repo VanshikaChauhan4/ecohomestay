@@ -35,13 +35,13 @@
 .inner-section {
   padding: var(--sp-16) 0;
 }
-.inner-section--alt { background: var(--cream); }
+.inner-section--alt { background: var(--surface-alt); }
 
 .inner-centered-h2 {
   font-family: var(--font-display);
   font-size: clamp(var(--text-xl), 3vw, var(--text-3xl));
   font-weight: 700;
-  color: var(--forest);
+  color: var(--text);
   text-align: center;
   margin-bottom: var(--sp-10);
   letter-spacing: -0.02em;
@@ -58,16 +58,16 @@
   font-family: var(--font-display);
   font-size: var(--text-2xl);
   font-weight: 700;
-  color: var(--forest);
+  color: var(--text);
   margin-bottom: var(--sp-4);
 }
 .inner-prose p {
   font-size: var(--text-base);
-  color: #4a5e50;
+  color: var(--text-muted);
   line-height: 1.75;
   margin-bottom: var(--sp-4);
 }
-.inner-prose em { color: var(--fern); font-style: italic; }
+.inner-prose em { color: var(--accent); font-style: italic; }
 
 /* Stat blocks */
 .inner-stat-stack {
@@ -76,7 +76,7 @@
   gap: var(--sp-4);
 }
 .stat-block {
-  background: var(--cream);
+  background: var(--surface-alt);
   border-radius: var(--radius-md);
   padding: var(--sp-6);
   border-left: 3px solid var(--moss);
@@ -86,7 +86,7 @@
   font-family: var(--font-display);
   font-size: var(--text-3xl);
   font-weight: 700;
-  color: var(--forest);
+  color: var(--text);
   line-height: 1;
   margin-bottom: var(--sp-1);
 }
@@ -105,7 +105,7 @@
   gap: var(--sp-6);
 }
 .value-card {
-  background: #fff;
+  background: var(--surface);
   border-radius: var(--radius-lg);
   padding: var(--sp-8);
   text-align: center;
@@ -118,10 +118,10 @@
   font-family: var(--font-display);
   font-size: var(--text-xl);
   font-weight: 700;
-  color: var(--forest);
+  color: var(--text);
   margin-bottom: var(--sp-2);
 }
-.value-card p { font-size: var(--text-sm); color: #5a6b5e; line-height: 1.65; }
+.value-card p { font-size: var(--text-sm); color: var(--text-muted); line-height: 1.65; }
 
 /* Team grid */
 .team-grid {
@@ -130,7 +130,7 @@
   gap: var(--sp-6);
 }
 .team-card {
-  background: #fff;
+  background: var(--surface);
   border-radius: var(--radius-lg);
   padding: var(--sp-8);
   text-align: center;
@@ -140,7 +140,7 @@
   font-size: 3rem;
   width: 80px; height: 80px;
   border-radius: 50%;
-  background: var(--cream);
+  background: var(--surface-alt);
   display: flex; align-items: center; justify-content: center;
   margin: 0 auto var(--sp-4);
 }
@@ -148,7 +148,7 @@
   font-family: var(--font-display);
   font-size: var(--text-lg);
   font-weight: 700;
-  color: var(--forest);
+  color: var(--text);
   margin-bottom: var(--sp-1);
 }
 .team-card__role {
@@ -159,7 +159,7 @@
   text-transform: uppercase;
   margin-bottom: var(--sp-3);
 }
-.team-card__bio { font-size: var(--text-sm); color: #5a6b5e; line-height: 1.6; }
+.team-card__bio { font-size: var(--text-sm); color: var(--text-muted); line-height: 1.6; }
 
 /* ── Responsive ──────────────────────────────────── */
 @media (max-width: 768px) {

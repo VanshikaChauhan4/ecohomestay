@@ -46,9 +46,9 @@
   font-family: var(--font-body);
   padding: var(--sp-2) var(--sp-4);
   border-radius: var(--radius-pill);
-  background: #fff;
-  color: var(--fern);
-  border: 1.5px solid rgba(74, 124, 89, 0.25);
+  background: var(--surface);
+  color: var(--accent);
+  border: 1.5px solid var(--border);
   transition: all var(--transition);
 }
 .dash-filter-chip:hover,

@@ -8,7 +8,7 @@
 .ui-input__label {
   font-size: var(--text-sm);
   font-weight: 600;
-  color: var(--forest);
+  color: var(--text);
 }
 .ui-input__required { color: #B3463C; }
 
@@ -34,8 +34,8 @@
   border-radius: var(--radius-md);
   font-size: var(--text-sm);
   font-family: var(--font-body);
-  color: var(--dusk);
-  background: var(--cream);
+  color: var(--text);
+  background: var(--surface-alt);
   outline: none;
   transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
 }
@@ -46,7 +46,7 @@
 .ui-input__control:focus {
   border-color: var(--moss);
   box-shadow: 0 0 0 3px rgba(74, 124, 89, 0.12);
-  background: #fff;
+  background: var(--surface);
 }
 
 /* Error state */

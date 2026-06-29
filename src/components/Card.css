@@ -1,5 +1,5 @@
 .card {
-  background: #fff;
+  background: var(--surface);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-card);
   overflow: hidden;
@@ -69,14 +69,14 @@
   font-family: var(--font-display);
   font-size: var(--text-xl);
   font-weight: 700;
-  color: var(--forest);
+  color: var(--text);
   margin-bottom: var(--sp-2);
   line-height: 1.25;
 }
 
 .card__desc {
   font-size: var(--text-sm);
-  color: #5a6b5e;
+  color: var(--text-muted);
   line-height: 1.6;
   flex: 1;
   margin-bottom: var(--sp-4);
@@ -89,7 +89,7 @@
   gap: var(--sp-3);
   margin-top: auto;
   padding-top: var(--sp-4);
-  border-top: 1px solid rgba(139, 175, 124, 0.2);
+  border-top: 1px solid var(--border);
 }
 
 .card__price {
@@ -101,7 +101,7 @@
   font-family: var(--font-display);
   font-size: var(--text-xl);
   font-weight: 700;
-  color: var(--forest);
+  color: var(--text);
 }
 .card__price span {
   font-size: var(--text-xs);
@@ -110,7 +110,7 @@
 
 .card__btn {
   background: var(--forest);
-  color: var(--cream);
+  color: var(--wheat);
   font-size: var(--text-sm);
   font-weight: 600;
   padding: var(--sp-2) var(--sp-4);

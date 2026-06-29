@@ -5,19 +5,22 @@ import Dashboard from './pages/Dashboard';
 import Login     from './pages/Login';
 import Showcase  from './pages/Showcase';
 import { ToastProvider } from './components/ui';
+import { ThemeProvider } from './context/ThemeContext';
 
 export default function App() {
   return (
-    <ToastProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/"          element={<Home />} />
-          <Route path="/about"     element={<About />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/login"     element={<Login />} />
-          <Route path="/components" element={<Showcase />} />
-        </Routes>
-      </BrowserRouter>
-    </ToastProvider>
+    <ThemeProvider>
+      <ToastProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/"          element={<Home />} />
+            <Route path="/about"     element={<About />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/login"     element={<Login />} />
+            <Route path="/components" element={<Showcase />} />
+          </Routes>
+        </BrowserRouter>
+      </ToastProvider>
+    </ThemeProvider>
   );
 }

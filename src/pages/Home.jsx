@@ -1,71 +1,10 @@
+import { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Hero   from '../components/Hero';
 import Card   from '../components/Card';
 import Footer  from '../components/Footer';
+import { Loader, useToast } from '../components/ui';
 import './Home.css';
-
-const STAYS = [
-  {
-    emoji: '🏡',
-    title: 'Nilgiri Mist Cottage',
-    location: 'Ooty, Tamil Nadu',
-    tag: 'Homestay',
-    tagColor: 'green',
-    description: 'Wake to cloud-wrapped eucalyptus forest. Stay with the Krishnaswamy family in their 100-year-old estate, harvesting cardamom at dawn.',
-    price: '2,400',
-    rating: '4.9',
-  },
-  {
-    emoji: '🌾',
-    title: 'Konkan Rice Farm',
-    location: 'Ratnagiri, Maharashtra',
-    tag: 'Agri-Stay',
-    tagColor: 'amber',
-    description: 'Transplant paddy alongside Marathi farmers. Learn ancient sukata fish drying and feast on kokum-laced curries under mango groves.',
-    price: '1,800',
-    rating: '4.8',
-  },
-  {
-    emoji: '🐄',
-    title: 'Brahmaputra Dairy Retreat',
-    location: 'Jorhat, Assam',
-    tag: 'Agri-Allied',
-    tagColor: 'soil',
-    description: 'Craft handmade butter, bottle-feed calves, and row a bamboo boat through morning fog. A full immersion in Assamese rural life.',
-    price: '2,100',
-    rating: '4.9',
-  },
-  {
-    emoji: '🍵',
-    title: 'Munnar Tea Estate',
-    location: 'Munnar, Kerala',
-    tag: 'Eco-Tour',
-    tagColor: 'green',
-    description: "Walk tea-terraced hillsides, pluck alongside estate workers, and cup your own batch in the estate's Victorian-era tasting room.",
-    price: '3,200',
-    rating: '5.0',
-  },
-  {
-    emoji: '🐝',
-    title: 'Sundarbans Honey Village',
-    location: 'Gosaba, West Bengal',
-    tag: 'Community',
-    tagColor: 'amber',
-    description: 'Boat through mangrove creeks with honey-hunters. Contribute to tiger-corridor conservation while sleeping in a bamboo stilt house.',
-    price: '2,700',
-    rating: '4.7',
-  },
-  {
-    emoji: '🌵',
-    title: 'Thar Desert Farm',
-    location: 'Barmer, Rajasthan',
-    tag: 'Agri-Stay',
-    tagColor: 'soil',
-    description: 'Tend to drought-resistant millet, hand-block print textiles with local artisans, and stargaze from a khabar mud-brick terrace.',
-    price: '1,600',
-    rating: '4.8',
-  },
-];
 
 const HOW = [
   { icon: '🔍', step: 'Discover', desc: 'Browse verified host families across 18 Indian states — filter by region, activity, or season.' },
@@ -75,6 +14,26 @@ const HOW = [
 ];
 
 export default function Home() {
+  const toast = useToast();
+  const [stays, setStays] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('http://localhost:5000/api/homestays')
+      .then((res) => {
+        if (!res.ok) throw new Error('Failed to load stays');
+        return res.json();
+      })
+      .then((data) => {
+        setStays(data.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        toast.show(err.message || 'Could not load stays. Please try again.', { type: 'error' });
+        setLoading(false);
+      });
+  }, []);
+
   return (
     <div className="page-wrapper">
       <Navbar />
@@ -91,11 +50,28 @@ export default function Home() {
                 Every listing is personally vetted by our field team. No hotels, no resorts — only homes.
               </p>
             </div>
-            <div className="card-grid">
-              {STAYS.map(stay => (
-                <Card key={stay.title} {...stay} />
-              ))}
-            </div>
+
+            {loading ? (
+              <div className="show-row show-row--center" style={{ padding: '48px 0' }}>
+                <Loader variant="spinner" size="lg" label="Loading stays…" />
+              </div>
+            ) : (
+              <div className="card-grid">
+                {stays.map((stay) => (
+                  <Card
+                    key={stay.id}
+                    emoji={stay.emoji}
+                    title={stay.name}
+                    location={stay.location}
+                    tag={stay.tag}
+                    tagColor={stay.tagColor}
+                    description={stay.description}
+                    price={stay.pricePerNight.toLocaleString()}
+                    rating={stay.rating}
+                  />
+                ))}
+              </div>
+            )}
           </div>
         </section>
 

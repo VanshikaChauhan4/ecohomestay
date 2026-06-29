@@ -21,7 +21,7 @@
 /* ── Variants ────────────────────────────────────── */
 .ui-btn--primary {
   background: var(--forest);
-  color: var(--cream);
+  color: var(--wheat);
 }
 .ui-btn--primary:hover:not(:disabled) {
   background: var(--fern);
@@ -41,8 +41,8 @@
 
 .ui-btn--ghost {
   background: transparent;
-  color: var(--forest);
-  border-color: rgba(74, 124, 89, 0.35);
+  color: var(--text);
+  border-color: var(--border);
 }
 .ui-btn--ghost:hover:not(:disabled) {
   background: rgba(74, 124, 89, 0.08);
